@@ -1,8 +1,5 @@
 pipeline {
     agent any 
-    tools {
-    
-    }
     stages {
         stage('Compile and Clean') { 
             steps {
