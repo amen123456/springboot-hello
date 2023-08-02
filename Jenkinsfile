@@ -38,7 +38,7 @@ pipeline {
         stage('Docker deploy'){
             steps {
                
-                sh 'docker run -it -p  8081:8080 anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER}'
+                sh 'docker run -p  8081:8080 anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER}'
             }
         }
         stage('Archving') { 
