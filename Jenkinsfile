@@ -1,15 +1,15 @@
 pipeline {
     agent any 
-    tools {
-        maven "3.6.3"
-    
+       tools {
+        // Specify the name of the configured Maven tool
+        maven '3.6.3'
     }
+
     stages {
-        stage('Compile and Clean') { 
+        stage('Build') {
             steps {
-                // Run Maven on a Unix agent.
-              
-                sh "mvn clean compile"
+                // Your Maven build steps here
+                sh 'mvn clean install'
             }
         }
         stage('deploy') { 
