@@ -1,14 +1,8 @@
 pipeline {
     agent any 
-       tools {
-        // Specify the name of the configured Maven tool
-        maven '3.6.3'
-    }
-
     stages {
         stage('Build') {
             steps {
-                // Your Maven build steps here
                 sh 'mvn clean install'
             }
         }
