@@ -1,17 +1,12 @@
 pipeline {
     agent any 
-    tools {
-        maven "3.6.3"
-    
-    }
     stages {
         stage('Build') {
             steps {
                 sh 'mvn clean install'
             }
         }
-        stage('deploy') { 
-            
+        stage('deploy') {           
             steps {
                 sh "mvn package"
             }
@@ -40,7 +35,7 @@ pipeline {
         stage('Docker deploy'){
             steps {
                
-                sh 'docker run -itd -p  8082:8080 amenbenkhalifa/docker_jenkins_springboot:${BUILD_NUMBER}'
+                sh 'docker run -itd -p  8081:8080 amenbenkhalifa/docker_jenkins_springboot:${BUILD_NUMBER}'
             }
         }
         stage('Archving') { 
